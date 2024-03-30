@@ -2,7 +2,7 @@
 int mygetline(char *line);
 struct Point xyToBoard(char *line);
 
-//InputPVEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê²¢ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Ï·ï¿½
+//InputPVEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê²¢ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Ï·ï¿?
 struct Point InputPVE(int begin){
     char line[6];
     extern struct Point point;
@@ -20,7 +20,7 @@ struct Point InputPVE(int begin){
         {
             for (int j = 0; j < SIZE; j++)
             {
-                arrayForInnerBoardLayout[i][j] = arrayforRegret2[i][j]; //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ÌµÄ¸ï¿½Ö»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½×´Ì¬
+                arrayForInnerBoardLayout[i][j] = arrayforRegret2[i][j]; //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ÌµÄ¸ï¿½Ö»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½×´Ì?
             }            
         }
         outputPVE(begin);
@@ -28,11 +28,11 @@ struct Point InputPVE(int begin){
         point=xyToBoard(line);
         if (point.x >= SIZE || point.y >= SIZE || point.x < 0 || point.y < 0)
         {
-            printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½Î§ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º");
+            printf("²»ÔÚÆåÅÌÓÐÐ§·¶Î§ÄÚ£¬ÇëÖØÐÂÊäÈë£º");
             return InputPVE(begin);     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ý¹ï¿½ï¿½ï¿½Ã£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·
         }else if (arrayForInnerBoardLayout[point.x][point.y] != 0)
         {
-            printf("ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º");
+            printf("¸Ã´¦ÒÑÓÐÆå×Ó£¬ÇëÖØÐÂÊäÈë£º");
             return InputPVE(begin);     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ý¹ï¿½ï¿½ï¿½Ã£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·
         }else{
             return point;

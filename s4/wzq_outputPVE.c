@@ -26,27 +26,27 @@ void outputPVE(int begin){
         case 1:
             switch (color){
                 case 1:
-                    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ÇºÚ·ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½");
+                    printf("ÏÖÔÚÊÇºÚ·½ÐÐÆå£¬ÇëÊäÈëºÚÆåÂä×ÓÎ»ÖÃ£º");
                     black_p();
                     if (forbid(point.x, point.y, (-color+3)/2, 0) == 1) //ï¿½Ð¶ï¿½ï¿½Ç·ñ´¥·ï¿½ï¿½ï¿½ï¿½ï¿½
                     {
-                        printf("ï¿½ï¿½ï¿½å´¥ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                        printf("ºÚ·½´¥·¸½ûÊÖ£¬°×·½Ê¤Àû£¡\n");
                         return;
                     }
                     arrayForInnerBoardLayout[point.x][point.y] = 1;
                     if (judgeWin(point.x, point.y, (-color+3)/2) == 1)  //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Ê¤ï¿½ï¿½
                     {
-                        printf("ï¿½Ú·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                        printf("ºÚ·½Ê¤Àû£¡\n");
                         return;
                     }
                     color=-1;
                     break;
                 case -1:
                     white_e();
-                    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îªï¿½ï¿½%c%d\n",point.y+'A',point.x+1);
+                    printf("°×·½Âä×ÓÎ»ÖÃÎª£º%c%d\n",point.y+'A',point.x+1);
                     if (judgeWin(point.x, point.y, (-color+3)/2) == 1)  //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Ê¤ï¿½ï¿½
                     {
-                        printf("ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                        printf("°×·½Ê¤Àû£¡\n");
                         return;
                     }
                     arrayForInnerBoardLayout[point.x][point.y] = 2;
@@ -60,16 +60,16 @@ void outputPVE(int begin){
             switch (color){
                 case 1:
                     black_e();
-                    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îªï¿½ï¿½%c%d\n",point.y+'A',point.x+1);
+                    printf("ºÚ·½Âä×ÓÎ»ÖÃÎª£º%c%d\n",point.y+'A',point.x+1);
                     if (forbid(point.x, point.y, (-color+3)/2, 0) == 1) //ï¿½Ð¶ï¿½ï¿½Ç·ñ´¥·ï¿½ï¿½ï¿½ï¿½ï¿½
                     {
-                        printf("ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                        printf("ºÚ·½´¥·¸½ûÊÖ£¬°×·½Ê¤Àû£¡\n");
                         return;
                     }
                     arrayForInnerBoardLayout[point.x][point.y] = 1;
                     if (judgeWin(point.x, point.y, (-color+3)/2))   //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Ê¤ï¿½ï¿½
                     {
-                        printf("ï¿½Ú·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                        printf("ºÚ·½Ê¤Àû£¡\n");
                         return;
                     }
                     color=-1;
@@ -78,7 +78,7 @@ void outputPVE(int begin){
                     white_p();
                     if (judgeWin(point.x, point.y, (-color+3)/2) == 1)
                     {
-                        printf("ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                        printf("°×·½Ê¤Àû£¡\n");
                         return;
                     }
                     arrayForInnerBoardLayout[point.x][point.y] = 2;
@@ -92,7 +92,7 @@ void outputPVE(int begin){
             break;
         }       
     }
-    printf("Æ½ï¿½Ö£ï¿½\n");
+    printf("Æ½¾Ö£¡\n");
     return;
 }
 
@@ -103,15 +103,15 @@ void outputEVE(){
         {
         case 1:
             black_e();
-            printf("ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îªï¿½ï¿½%c%d\n",point.y+'A',point.x+1);
+            printf("ºÚ·½Âä×ÓÎ»ÖÃÎª£º%c%d\n",point.y+'A',point.x+1);
             if (forbid(point.x, point.y, (-color+3)/2, 0) == 1)
             {
-                printf("ï¿½ï¿½ï¿½å´¥ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                printf("ºÚ·½´¥·¸½ûÊÖ£¬°×·½Ê¤Àû£¡\n");
                 return;
             }
             if (judgeWin(point.x, point.y, (-color+3)/2) == 1)
             {
-                printf("ï¿½Ú·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                printf("ºÚ·½Ê¤Àû£¡\n");
                 return;
             }
             arrayForInnerBoardLayout[point.x][point.y] = 1;
@@ -119,10 +119,10 @@ void outputEVE(){
             break;
         case -1:
             white_e();
-            printf("ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îªï¿½ï¿½%c%d\n",point.y+'A',point.x+1);
+            printf("°×·½Âä×ÓÎ»ÖÃÎª£º%c%d\n",point.y+'A',point.x+1);
             if (judgeWin(point.x, point.y, (-color+3)/2) == 1)
             {
-                printf("ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
+                printf("°×·½Ê¤Àû£¡\n");
                 return;
             }
             arrayForInnerBoardLayout[point.x][point.y] = 2;
@@ -132,7 +132,7 @@ void outputEVE(){
             break;
         }       
     }
-    printf("Æ½ï¿½Ö£ï¿½\n");
+    printf("Æ½¾Ö£¡\n");
     return;
 }
 
@@ -148,7 +148,7 @@ void black_p(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }
         
     }
@@ -156,7 +156,7 @@ void black_p(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }            
     }    
 }
@@ -173,7 +173,7 @@ void white_e(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }
         
     }
@@ -181,7 +181,7 @@ void white_e(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }            
     }
 }
@@ -198,14 +198,14 @@ void black_e(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }
     }
     for (int i = 0; i < 15; i++)
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }            
     }
 }
@@ -222,7 +222,7 @@ void white_p(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret2[i][j] = arrayforRegret1[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }
         
     }
@@ -230,7 +230,7 @@ void white_p(){
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
+            arrayforRegret1[i][j] = arrayForInnerBoardLayout[i][j]; //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿?
         }            
     }
 }
