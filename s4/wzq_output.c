@@ -9,37 +9,37 @@ extern int arrayForInnerBoardLayout[SIZE][SIZE];
 extern int arrayforRegret[SIZE][SIZE];
 extern char play1CurrentPic[];
 extern char play2CurrentPic[];
+extern struct Point point;
 
-static int color=1; //Ö¸Ã÷µ±Ç°Æå×ÓÑÕÉ«
+static int color=1; //Ö¸ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
 
-//Êä³öº¯Êý£¬ÓÃÓÚÊä³öÆåÅÌ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void output(){
     extern int color;
-    extern struct point point;
 
     while (full(arrayForInnerBoardLayout) == 0){
         switch (color){
         case 1:
-            printf("ÏÖÔÚÊÇºÚ·½ÐÐÆå£¬ÇëÊäÈëºÚÆåÂä×ÓÎ»ÖÃ£º");
+            printf("ï¿½ï¿½ï¿½ï¿½ï¿½ÇºÚ·ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½");
             black();
             if (forbid(point.x, point.y, (-color+3)/2, 0) == 1)
             {
-                printf("ºÚÆå´¥·¸½ûÊÖ£¬°×·½Ê¤Àû£¡");
+                printf("ï¿½ï¿½ï¿½å´¥ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½");
                 return;
             }
             if (judgeWin(point.x, point.y, (-color+3)/2) == 1)
             {
-                printf("ºÚ·½Ê¤Àû£¡\n");
+                printf("ï¿½Ú·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
                 return;
             }
             color=-1;
             break;
         case -1:
-            printf("ÏÖÔÚÊÇ°×·½ÐÐÆå£¬ÇëÊäÈë°×ÆåÂä×ÓÎ»ÖÃ£º");
+            printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ç°×·ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½");
             white();
             if (judgeWin(point.x, point.y, (-color+3)/2) == 1)
             {
-                printf("°×·½Ê¤Àû£¡\n");
+                printf("ï¿½×·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½\n");
                 return;
             }
             color=1;
@@ -48,29 +48,29 @@ void output(){
             break;
         }
     }
-    printf("Æ½¾Ö£¡\n");
+    printf("Æ½ï¿½Ö£ï¿½\n");
     return;
 }
 
-//ºÚ·½Âä×Ó
+//ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½
 void black(){
     point=Input();
     
     innerLayoutToDisplayArray();
     arrayForDisplayBoard[point.x][point.y*2] = play1CurrentPic[0];
-    arrayForDisplayBoard[point.x][point.y*2+1] = play1CurrentPic[1]; //ÕâÀïµÄpoint.y*2+1ÊÇÒòÎªÖÐÎÄ×Ö·ûÕ¼Á½¸ö×Ö½Ú
+    arrayForDisplayBoard[point.x][point.y*2+1] = play1CurrentPic[1]; //ï¿½ï¿½ï¿½ï¿½ï¿½point.y*2+1ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½
     displayBoard();
     for (int i = 0; i < 15; i++)
     {
         for (int j = 0; j < 15; j++)
         {
-            arrayforRegret[i][j] = arrayForInnerBoardLayout[i][j];  //¼ÇÂ¼»ÚÆåÇ°µÄÆåÅÌ¸ñ¾Ö
+            arrayforRegret[i][j] = arrayForInnerBoardLayout[i][j];  //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½
         }            
     }        
     arrayForInnerBoardLayout[point.x][point.y] = 1;
     getchar();  
 }
-//°×·½Âä×Ó
+//ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½
 void white(){
     point=Input();
 

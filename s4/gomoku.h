@@ -47,11 +47,11 @@
 #define huotwo_5w 168 //020020
 
 
-struct point
+struct Point
 {
 	int x;
 	int y;
-} point;
+};
 
 typedef struct {
     int i;
@@ -59,17 +59,16 @@ typedef struct {
     int score;
 } PositionScore;
 
-struct point Input();
-struct point InputPVE(int begin);
+struct Point Input();
+struct Point InputPVE(int begin);
 int mygetline(char *s);
-struct point xyToBoard(char *line);
+struct Point xyToBoard(char *line);
 void output();
 void outputPVE(int begin);
 void outputEVE();
 
 
 int full(int array[SIZE][SIZE]);
-struct point randomgomoku();
 
 void initRecordBorard(void);
 void innerLayoutToDisplayArray(void);
@@ -83,4 +82,4 @@ int isHuoThree(int x, int y, int dx, int dy, int color);
 int isChongThree(int x, int y, int dx, int dy, int color);
 int isHuoTwo(int x, int y, int dx, int dy, int color);
 int inRange(int x, int y);
-struct point position(int x, int y, int color);
+struct Point position(int x, int y, int color);

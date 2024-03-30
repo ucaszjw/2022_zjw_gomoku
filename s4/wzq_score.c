@@ -1,6 +1,7 @@
 #include "gomoku.h"
 
 extern int arrayForInnerBoardLayout[SIZE][SIZE];
+extern struct Point point;
 int base[]={1,3,9,27,81,243,729,2187,6561,19683,59049,177147};  //base数组，用三进制数表示棋盘格局
 int scoretab[15][15]={
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -391,7 +392,7 @@ int score(int x, int y, int color){
     return self + opponent; //返回总分
 }
 
-struct point position(int x, int y, int color){
+struct Point position(int x, int y, int color){
     PositionScore positionScore;
     PositionScore scores[SIZE * SIZE]; 
     int compare(const void *a, const void *b);

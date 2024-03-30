@@ -1,11 +1,11 @@
 #include "gomoku.h"
 int mygetline(char *line);
-struct point xyToBoard(char *line);
+struct Point xyToBoard(char *line);
 
-//InputPVEº¯Êı£¬ÓÃÓÚÊäÈëÆå×Ó×ø±ê²¢ÅĞ¶ÏÊÇ·ñºÏ·¨
-struct point InputPVE(int begin){
+//InputPVEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê²¢ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½Ï·ï¿½
+struct Point InputPVE(int begin){
     char line[6];
-    extern struct point point;
+    extern struct Point point;
     
     extern int color;
     extern int arrayForInnerBoardLayout[SIZE][SIZE];
@@ -13,14 +13,14 @@ struct point InputPVE(int begin){
     extern int arrayforRegret2[SIZE][SIZE]; 
 
     mygetline(line);
-    if (line[0] == 'q' && line [1] == '\n') //ÊäÈëqÊ±ÍË³ö³ÌĞò
+    if (line[0] == 'q' && line [1] == '\n') //ï¿½ï¿½ï¿½ï¿½qÊ±ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½
         exit(0);
-    else if (line[0] == 'r' && line[1] == '\n'){    //ÊäÈërÊ±»ÚÆå
+    else if (line[0] == 'r' && line[1] == '\n'){    //ï¿½ï¿½ï¿½ï¿½rÊ±ï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < SIZE; i++)
         {
             for (int j = 0; j < SIZE; j++)
             {
-                arrayForInnerBoardLayout[i][j] = arrayforRegret2[i][j]; //»ÚÆåÊ±£¬½«µ±Ç°ÆåÅÌµÄ¸ñ¾Ö»Ö¸´µ½»ÚÆåÇ°µÄ×´Ì¬
+                arrayForInnerBoardLayout[i][j] = arrayforRegret2[i][j]; //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ÌµÄ¸ï¿½Ö»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½×´Ì¬
             }            
         }
         outputPVE(begin);
@@ -28,12 +28,12 @@ struct point InputPVE(int begin){
         point=xyToBoard(line);
         if (point.x >= SIZE || point.y >= SIZE || point.x < 0 || point.y < 0)
         {
-            printf("²»ÔÚÆåÅÌÓĞĞ§·¶Î§ÄÚ£¬ÇëÖØĞÂÊäÈë£º");
-            return InputPVE(begin);     //ÊäÈë´íÎóÊ±µİ¹éµ÷ÓÃ£¬Ö±µ½ÊäÈëÕıÈ·
+            printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½Î§ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º");
+            return InputPVE(begin);     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½İ¹ï¿½ï¿½ï¿½Ã£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·
         }else if (arrayForInnerBoardLayout[point.x][point.y] != 0)
         {
-            printf("¸Ã´¦ÒÑÓĞÆå×Ó£¬ÇëÖØĞÂÊäÈë£º");
-            return InputPVE(begin);     //ÊäÈë´íÎóÊ±µİ¹éµ÷ÓÃ£¬Ö±µ½ÊäÈëÕıÈ·
+            printf("ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º");
+            return InputPVE(begin);     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½İ¹ï¿½ï¿½ï¿½Ã£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·
         }else{
             return point;
         }
