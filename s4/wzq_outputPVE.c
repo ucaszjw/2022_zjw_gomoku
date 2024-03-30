@@ -75,6 +75,7 @@ void outputPVE(int begin){
                     color=-1;
                     break;
                 case -1:
+                    printf("现在是白方行棋，请输入白棋落子位置：");
                     white_p();
                     if (judgeWin(point.x, point.y, (-color+3)/2) == 1)
                     {
